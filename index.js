@@ -1,11 +1,11 @@
 const Express = require('express')();
 
 Express.get(
-    '/' , ( Q , R ) => R.send("ACT").status(200),
+    '/' , ( Q , R ) => R.status(200).send("ACT"),
 );
 
 Express.use(
-    ( Q , R , N ) => R.send("NF 404").status(404),
+    ( Q , R , N ) => R.status(404).send("NF 404"),
 );
 
 Express.listen(
